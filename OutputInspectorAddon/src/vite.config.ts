@@ -1,5 +1,3 @@
-// import { viteExternalsPlugins } from "vite-plugin-externals";
-import createExternals from "vite-plugin-external";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import path from "path";
@@ -24,23 +22,8 @@ export default defineConfig({
         },
         entryFileNames: "[name].js",
       },
-      plugins: [
-        // externalGlobals({
-        //   react: "React",
-        //   "react-dom": "ReactDOM",
-        // }),
-      ],
       preserveEntrySignatures: "exports-only",
     },
   },
-  plugins: [
-    dts(),
-    react(),
-    createExternals({
-      externals: {
-        react: "React",
-        "react-dom": "ReactDOM",
-      },
-    }),
-  ],
+  plugins: [dts(), react()],
 });

@@ -1,3 +1,4 @@
+import createExternals from "vite-plugin-external";
 import { defineConfig } from "vite";
 import linaria from "@linaria/vite";
 import path from "path";
@@ -12,7 +13,7 @@ export default defineConfig({
       formats: ["cjs", "es"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "react/jsx-runtime", "react-dom/server"],
       output: {
         globals: {
           react: "React",
@@ -25,6 +26,12 @@ export default defineConfig({
     react(),
     linaria({
       sourceMap: process.env.NODE_ENV !== "production",
+    }),
+    createExternals({
+      externals: {
+        react: "React",
+        "react-dom": "ReactDOM",
+      },
     }),
   ],
 });

@@ -1,0 +1,23 @@
+{
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.1",
+    "@astrojs/react": "^3.0.10",
+    "@bobaboard/boba-editor-next": "^0.0.1",
+    "@types/react": "^16",
+    "@types/react-dom": "^16",
+    "astro": "^4.3.5",
+    "react": "^16",
+    "react-dom": "^16",
+    "typescript": "^5.3.3"
+  }
+}
