@@ -1,6 +1,6 @@
 import { AddMediaImage, Code, GifFormat, Www } from "iconoir-react";
 import { MenuButtonProps, MenuOption, MenuOptionsProps } from "./BubbleMenu";
-import React, { useId } from "react";
+import React, { forwardRef, useId, useRef, useState } from "react";
 
 const handleFileLoadRequest = (
   callback: (loadPromise: Promise<string | ArrayBuffer>) => void
@@ -83,21 +83,6 @@ export const OEmbedButton = ({ editor }: MenuButtonProps) => {
     </button>
   );
 };
-
-// TODO: Implement actual logic (and add button to map) once we have GIF selecting figured out
-// export const GifButton = ({ editor }: MenuButtonProps) => {
-//   return (
-//     <button
-//       title="Add GIF"
-//       aria-label="add GIF"
-//       onClick={() => {
-
-//       }}
-//     >
-//       <GifFormat />
-//     </button>
-//   );
-// };
 
 const floatingMenuButtons = new Map<string, React.FC<MenuButtonProps>>();
 floatingMenuButtons.set("image", ImageButton);

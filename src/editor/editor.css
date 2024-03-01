@@ -18,6 +18,29 @@
   list-style: none;
 }
 
+.gif-search-popup {
+  width: min(430px, 65vw);
+}
+
+.gif-previews {
+  /* display: grid; */
+  /* grid-template-columns: repeat(4, auto);
+  grid-auto-flow: row; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+}
+
+.gif-search-popup label {
+  display: flex;
+  gap: 4px;
+  min-width: max-content;
+  margin-block-start: 8px;
+}
+
 .base-block {
   background-color: cornflowerblue;
 }
